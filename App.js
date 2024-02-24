@@ -1,20 +1,58 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import HomePage from './src/screens/HomePage';
+import { ClerkProvider,SignedIn,SignedOut } from '@clerk/clerk-expo';
+import SignInWithOAuth from './src/screens/components/SignInWithOAuth';
+import MainPage from './src/screens/MainPage';
+import StackNavigation from './src/navigation/StackNavigation';
+import { useNavigation } from '@react-navigation/native';
+import SignInScreen from './src/screens/SignInScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import GetStartedPage from './src/screens/GetStartedPage';
+import Result from './src/screens/Result';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+
+
+      
+   
+
+
+    
+      
+
+    <ClerkProvider publishableKey={'pk_test_aWRlYWwtbW9yYXktNjEuY2xlcmsuYWNjb3VudHMuZGV2JA'}>
+      <SafeAreaView style={styles.root}>
+        <NavigationContainer>
+        <SignedIn>  
+              <Result/>
+                   
+          </SignedIn>
+          <SignedOut>
+          <StackNavigation/>
+          </SignedOut>
+           
+            
+        </NavigationContainer>
+      </SafeAreaView>
+     </ClerkProvider>
+  )
 }
 
+
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: '#0C212B'
+    // ----------havee after
+  }, 
 });
+
+
+
+export default App;
+
+

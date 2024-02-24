@@ -18,10 +18,12 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": ["READ_EXTERNAL_STORAGE"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.medhansh01.Authentication"
     },
     "web": {
       "favicon": "./assets/favicon.png"
