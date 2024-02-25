@@ -1,4 +1,4 @@
-#Summify
+# Summify
 <br>
 ## This is our 5th-semester project, which combines NLP and Web Development.
 <br>
